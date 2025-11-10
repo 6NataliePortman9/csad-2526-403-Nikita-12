@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include "catch_test_macros.hpp"
 #include "math_operations.h"
 
 TEST_CASE("Addition works correctly", "[add]") {
