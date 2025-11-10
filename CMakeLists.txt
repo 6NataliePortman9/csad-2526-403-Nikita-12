@@ -7,5 +7,15 @@ project(HelloWorldProject)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Додавання вихідного файлу
-add_executable(hello_world main.cpp)
+# Основна програма
+add_executable(hello_world main.cpp math_operations.cpp)
+
+# Тестовий виконуваний файл
+add_executable(unit_tests unit_tests.cpp math_operations.cpp)
+
+# Додавання Catch2 (припускаємо, що catch.hpp знаходиться в директорії tests/include)
+target_include_directories(unit_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/tests/include)
+
+# Позначення тестів (опціонально, якщо використовуєте CTest)
+enable_testing()
+add_test(NAME MathOperationsTests COMMAND unit_tests)
