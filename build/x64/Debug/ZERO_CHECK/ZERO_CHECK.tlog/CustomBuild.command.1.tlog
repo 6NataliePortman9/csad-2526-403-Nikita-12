@@ -1,0 +1,10 @@
+^D:\PRG\CSAD-2526-403-NIKITA-12\BUILD\CMAKEFILES\8D280B070B7FF94B869FBA77FB22E729\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Prg/csad-2526-403-Nikita-12 -BD:/Prg/csad-2526-403-Nikita-12/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Prg/csad-2526-403-Nikita-12/build/HelloWorldProject.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,5 @@
+D:/Prg/csad-2526-403-Nikita-12/build/CMakeFiles/hello_world.dir
+D:/Prg/csad-2526-403-Nikita-12/build/CMakeFiles/unit_tests.dir
+D:/Prg/csad-2526-403-Nikita-12/build/CMakeFiles/RUN_TESTS.dir
+D:/Prg/csad-2526-403-Nikita-12/build/CMakeFiles/ALL_BUILD.dir
+D:/Prg/csad-2526-403-Nikita-12/build/CMakeFiles/ZERO_CHECK.dir

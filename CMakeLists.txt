@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(hello_world main.cpp math_operations.cpp)
 
 # Тестовий виконуваний файл
-add_executable(unit_tests unit_tests.cpp math_operations.cpp)
+add_executable(unit_tests tests/unit_tests.cpp math_operations.cpp)
 
 # Додавання Catch2 (припускаємо, що catch.hpp знаходиться в директорії tests/include)
 target_include_directories(unit_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/tests/include)

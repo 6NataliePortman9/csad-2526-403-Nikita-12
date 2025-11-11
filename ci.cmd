@@ -13,8 +13,8 @@ cmake ..
 REM Білдування проєкту
 cmake --build .
 
-REM Запуск юніт-тестів за допомогою CTest
-ctest --output-on-failure
+REM Запуск юніт-тестів з конфігурацією Debug
+ctest -C Debug --output-on-failure
 
 REM Повернення до кореневої директорії
 cd ..

@@ -1,7 +1,7 @@
 #include <iostream>
+// math_operations.cpp
 #include "math_operations.h"
 
-int main() {
-    std::cout << "3 + 4 = " << add(3, 4) << std::endl;
-    return 0;
+int add(int a, int b) {
+    return a + b;
 }
