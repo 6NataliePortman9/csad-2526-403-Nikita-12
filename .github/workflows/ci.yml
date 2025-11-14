@@ -1,0 +1,50 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master, develop, feature/** ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  build-and-test:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup CMake
+      uses: jwlawson/actions-setup-cmake@v1.14
+      with:
+        cmake-version: '3.10.x'
+    
+    - name: Create build directory
+      run: mkdir build
+    
+    - name: Configure CMake
+      working-directory: ./build
+      run: cmake ..
+    
+    - name: Build project
+      working-directory: ./build
+      run: cmake --build .
+    
+    - name: Run Unit Tests
+      working-directory: ./build
+      run: ctest --output-on-failure ${{ matrix.os == 'windows-latest' && '-C Debug' || '' }}
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-${{ matrix.os }}
+        path: |
+          build/hello_world*
+          build/unit_tests*
+          build/Debug/hello_world*
+          build/Debug/unit_tests*
